@@ -1,0 +1,124 @@
+
+db.plantas.count()
+29617
+
+db.plantas.count({Freguesia: "São Domingos de Rana"})
+5903
+
+db.plantas.distinct("Freguesia").sort()
+[
+  '',
+  'Abóboda',
+  'Alcabideche',
+  'São Domingos de Rana',
+  'U.F. Carcavelos e Parede',
+  'U.F. Cascais e Estoril'
+]
+
+db.plantas.aggregate([{$group: {_id:"$Freguesia", count: {$sum: 1}}}])
+{
+  _id: 'Abóboda',
+  count: 2
+}
+{
+  _id: 'U.F. Cascais e Estoril',
+  count: 12023
+}
+{
+  _id: 'São Domingos de Rana',
+  count: 5903
+}
+{
+  _id: 'São Domingos de Rana',
+  count: 5903
+}
+{
+  _id: 'Alcabideche',
+  count: 4034
+}
+{
+  _id: '',
+  count: 26
+}
+
+db.plantas.aggregate([{$group: {_id:"$Espécie", count: {$sum: 1}}}])
+{
+  _id: 'metrosidero',
+  count: 72
+}
+{
+  _id: 'tilia de folhas pequenas',
+  count: 115
+}
+{
+  _id: 'tamareira',
+  count: 47
+}
+{
+  _id: 'jacaranda',
+  count: 684
+}
+{
+  _id: 'eucalipto',
+  count: 174
+}
+{
+  _id: 'olaia',
+  count: 567
+}
+{
+  _id: 'platano bastardo',
+  count: 707
+}
+{
+  _id: 'loureiro',
+  count: 5
+}
+{
+  _id: 'ailanto',
+  count: 9
+}
+{
+  _id: 'planta do natal',
+  count: 2
+}
+{
+  _id: 'abacateiro',
+  count: 25
+}
+{
+  _id: 'pimenteira bastarda',
+  count: 216
+}
+{
+  _id: 'abeto do norte',
+  count: 1
+}
+{
+  _id: 'loureiro real',
+  count: 3
+}
+{
+  _id: 'Lodão americano',
+  count: 1
+}
+{
+  _id: 'ficus benjamina',
+  count: 37
+}
+{
+  _id: 'mioporum',
+  count: 59
+}
+{
+  _id: 'alfenheiro',
+  count: 3
+}
+{
+  _id: 'São Domingos de Rana',
+  count: 2
+}
+{
+  _id: 'árvore do gelo',
+  count: 126
+}
